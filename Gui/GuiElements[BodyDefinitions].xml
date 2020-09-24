@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ########################################## -->
+  <!-- ######         Golem Factory         ###### -->
+  <!-- ########################################## -->
+
+  <!-- Golem Factory -->
+
+  <GuiElement Name="UnitBodyGolemSettler">
+    <Title>%UnitBodyGolemSettler</Title>
+    <Description>%UnitBodyGolemSettlerDescription</Description>
+    <Icons>
+      <Icon Size="Small" Path="GUI/AtlasedBitmaps/Units/UnitCultistsSettlerSmall" />
+      <Icon Size="Large" Path="GUI/DynamicBitmaps/Units/UnitCultistsSettlerLarge" />
+    </Icons>
+  </GuiElement>
+
+  <GuiElement Name="UnitBodyGolemCollector">
+    <Title>%UnitBodyGolemCollectorTitle</Title>
+    <Description>%UnitBodyGolemCollectorDescription</Description>
+    <Icons>
+      <Icon Size="Small" Path="GUI/AtlasedBitmaps/Units/UnitCultistsMilitiaSmall" />
+      <Icon Size="Large" Path="GUI/DynamicBitmaps/Units/UnitCultistsMilitiaLarge" />
+    </Icons>
+  </GuiElement>
+
+  
+  <GuiElement Name="UnitBodyEvoker">
+    <Title>%UnitBodyEvoker</Title>
+    <Description>%UnitBodyEvokerDescription</Description>
+    <Icons>
+      <Icon Size="Small" Path="GUI/AtlasedBitmaps/Units/UnitRageWizardsSettlerSmall" />
+      <Icon Size="Large" Path="GUI/DynamicBitmaps/Units/UnitRageWizardsSettlerLarge" />
+    </Icons>
+  </GuiElement>
+
+    <GuiElement Name="UnitBodyYggdraDemon">
+    <Title>%UnitBodyYggdraDemonTitle</Title>
+    <Description>%UnitBodyYggdraDemonDescription</Description>
+    <Icons>
+      <Icon Size="Small" Path="GUI/AtlasedBitmaps/Units/UnitTaskolGolemSmall" />
+      <Icon Size="Large" Path="GUI/DynamicBitmaps/Units/UnitTaskolGolemLarge" />
+    </Icons>
+  </GuiElement>
+  
+  <GuiElement Name="UnitBodyBelphagorDemon">
+    <Title>%UnitBodyBelphagorDemonTitle</Title>
+    <Description>%UnitBodyBelphagorDemonDescription</Description>
+    <Icons>
+      <Icon Size="Small" Path="GUI/AtlasedBitmaps/Units/UnitBrokenLordsCavalrySmall" />
+      <Icon Size="Large" Path="GUI/DynamicBitmaps/Units/UnitBrokenLordsCavalryLarge" />
+    </Icons>
+  </GuiElement>
+
+</Datatable>

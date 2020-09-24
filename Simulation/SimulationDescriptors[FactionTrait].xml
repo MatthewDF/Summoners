@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ########################################## -->
+  <!-- ######        MAJOR FACTIONS        ###### -->
+  <!-- ########################################## -->
+
+
+  <SimulationDescriptor Name="FactionTraitBrokenLords2"             Type="FactionTrait">
+    <SimulationModifierDescriptors>
+      <SimulationModifierDescriptor TargetProperty="BaseFoodPerPopulation"         Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictFood"                  Operation="Multiplication" Value="0" Path="EmpireTypeMajor,AffinityBrokenLords/ClassCity/ClassDistrict" Priority="1"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictFood"                  Operation="Multiplication" Value="0" Path="EmpireTypeMajor,AffinityGolemFactory/ClassCity/ClassDistrict" Priority="1"/>	  
+      <SimulationModifierDescriptor TargetProperty="CityFood"                      Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="CityGrowthUpkeepPerPopulation" Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <!--<BinarySimulationModifierDescriptor TargetProperty="DistrictFoodNet" Operation="Addition" Left="$(DistrictDustToDistrictFoodNetConversionFactor)" BinaryOperation="Multiplication" Right="$(DistrictDust)" Path="../EmpireTypeMajor/ClassCity" IsBindOnSource="false" priority="1"/>-->
+      <SimulationModifierDescriptor TargetProperty="DistrictDustToDistrictDustNetConversionFactor"                Operation="Force" Value="1" Path="EmpireTypeMajor/ClassCity"/>
+      <SimulationModifierDescriptor TargetProperty="CityFoodToCityGrowthConversionFactor"                         Operation="Force" Value="0" Path="EmpireTypeMajor/ClassCity"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictDustToDistrictFoodNetConversionFactor"                Operation="Force" Value="0" Path="EmpireTypeMajor/ClassCity"/>
+      <SimulationModifierDescriptor TargetProperty="BaseDustPerPopulationToBaseFoodPerPopulationConversionFactor" Operation="Force" Value="0" Path="EmpireTypeMajor/ClassCity"/>
+    </SimulationModifierDescriptors>
+  </SimulationDescriptor>
+
+  <SimulationDescriptor Name="FactionTraitReplicants1"              Type="FactionTrait">
+    <SimulationModifierDescriptors>
+      <SimulationModifierDescriptor TargetProperty="BaseSciencePerPopulation"                         Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictScience"                                  Operation="Multiplication" Value="0" Path="EmpireTypeMajor,AffinityReplicants/ClassCity/ClassDistrict" Priority="1"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictScience"                                  Operation="Multiplication" Value="0" Path="EmpireTypeMajor,AffinityGolemFactory/ClassCity/ClassDistrict" Priority="1"/>
+      <SimulationModifierDescriptor TargetProperty="CityScience"                                      Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="TradeRouteCityScienceIncome"                      Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="TradeRouteCityScienceIncome"                      Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity/ClassTradeRoute" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="IntermediateTradeRoutesCityScienceIncome"         Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="TotalTradeRoutesCityScienceIncome"                Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="PercentOfLeechedTradeRouteCityScience"            Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="OverrallTradeRoutesCityScienceIncome"             Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+      <SimulationModifierDescriptor TargetProperty="LeechedTradeRoutesCityScienceIncome"              Operation="Multiplication" Value="0" Path="EmpireTypeMajor/ClassCity" Priority="10"/>
+    </SimulationModifierDescriptors>
+  </SimulationDescriptor>
+  
+  
+  </Datatable>

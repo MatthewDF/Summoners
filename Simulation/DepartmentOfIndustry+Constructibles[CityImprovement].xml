@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+  <!-- +1 worker golem on villages -->
+  <!--<CityImprovementDefinition Name="CityImprovementSummonersController"                    SubCategory="SubCategoryMilitary">
+    <SimulationDescriptorReference Name="CityImprovementSummonersController" />
+    <CustomCost ResourceName="Production" Instant="false">(30 + (($Property(ClassCity:PopulationBonus) * 10) * ($Property(ClassCity:PopulationBonus)) + 5)) * 2</CustomCost> 
+    <PathPrerequisite Flags="Prerequisite,Discard">.../EmpireTypeMajor,AffinityGolemFactory</PathPrerequisite>
+  </CityImprovementDefinition>-->
+
+</Datatable>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+  <!-- Demon Abilities -->
+  
+  <!-- Yggdra Demon's Bounty-->
+  <SimulationDescriptor Name="UnitAbilityYggdraBountyDescriptor" Type="UnitAbilityDescriptor">
+    <SimulationModifierDescriptors>
+      <SimulationModifierDescriptor TargetProperty="DistrictFood"   Operation="Multiplication" Value="1.05" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictFood"   Operation="Addition" Value="10" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>
+      <SimulationModifierDescriptor TargetProperty="MaximumCityDefensePoint"   Operation="Multiplication" Value=".97" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>	  
+      <SimulationModifierDescriptor TargetProperty="MaximumCityDefensePoint"   Operation="Subtraction" Value="10" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>	  
+    </SimulationModifierDescriptors>
+  </SimulationDescriptor>
+
+  <!-- Yggdra Demon's Bounty-->
+  <SimulationDescriptor Name="UnitAbilityBelphagorWisdomDescriptor" Type="UnitAbilityDescriptor">
+    <SimulationModifierDescriptors>
+      <SimulationModifierDescriptor TargetProperty="DistrictScience"   Operation="Multiplication" Value="1.05" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictScience"   Operation="Addition" Value="13" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>
+      <SimulationModifierDescriptor TargetProperty="DistrictIndustry"   Operation="Multiplication" Value=".97" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>	  
+      <SimulationModifierDescriptor TargetProperty="DistrictIndustry"   Operation="Subtraction" Value="7" Path="../ClassEmpire/ClassCity" ValueMustBePositive="true"/>	  
+    </SimulationModifierDescriptors>
+  </SimulationDescriptor>
+  
+   
+</Datatable>

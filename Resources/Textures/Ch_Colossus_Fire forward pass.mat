@@ -1,0 +1,173 @@
+0 Material Base
+ 1 string m_Name = "Ch_Colossus_Fire forward pass"
+ 0 PPtr<Shader> m_Shader
+  0 int m_FileID = 0
+  0 SInt64 m_PathID = 9774
+ 1 string m_ShaderKeywords = ""
+ 0 unsigned int m_LightmapFlags = 5
+ 0 int m_CustomRenderQueue = -1
+ 0 map stringTagMap
+  0 Array Array (0 items)
+   0 int size = 0
+ 0 UnityPropertySheet m_SavedProperties
+  0 map m_TexEnvs
+   0 Array Array (2 items)
+    0 int size = 2
+    [0]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_FireGradientMap"
+      0 UnityTexEnv second
+       0 PPtr<Texture> m_Texture
+        0 int m_FileID = 0
+        0 SInt64 m_PathID = 1752
+       0 Vector2f m_Scale
+        0 float x = 1.000000
+        0 float y = 1.000000
+       0 Vector2f m_Offset
+        0 float x = 0.000000
+        0 float y = 0.000000
+    [1]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_FireMaskMap"
+      0 UnityTexEnv second
+       0 PPtr<Texture> m_Texture
+        0 int m_FileID = 0
+        0 SInt64 m_PathID = 7457
+       0 Vector2f m_Scale
+        0 float x = 1.000000
+        0 float y = 1.000000
+       0 Vector2f m_Offset
+        0 float x = 0.000000
+        0 float y = 0.000000
+  0 map m_Floats
+   0 Array Array (5 items)
+    0 int size = 5
+    [0]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_AmbientFactor"
+      0 float second = 0.119403
+    [1]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Cutoff"
+      0 float second = 0.500000
+    [2]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Intensity"
+      0 float second = 0.010000
+    [3]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Opacity"
+      0 float second = 1.000000
+    [4]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Shininess"
+      0 float second = 0.300000
+  0 map m_Colors
+   0 Array Array (11 items)
+    0 int size = 11
+    [0]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_AmbientColor"
+      0 ColorRGBA second
+       0 float r = 0.067111
+       0 float g = 0.055978
+       0 float b = 0.078431
+       0 float a = 1.000000
+    [1]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_BaseFactionColor"
+      0 ColorRGBA second
+       0 float r = 0.925490
+       0 float g = 0.402163
+       0 float b = 0.000000
+       0 float a = 1.000000
+    [2]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Color"
+      0 ColorRGBA second
+       0 float r = 0.588235
+       0 float g = 0.588235
+       0 float b = 0.588235
+       0 float a = 1.000000
+    [3]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_FactionColor"
+      0 ColorRGBA second
+       0 float r = 0.749020
+       0 float g = 0.172549
+       0 float b = 0.172549
+       0 float a = 1.000000
+    [4]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_HighLightColor"
+      0 ColorRGBA second
+       0 float r = 1.000000
+       0 float g = 1.000000
+       0 float b = 1.000000
+       0 float a = 1.000000
+    [5]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_HighLightedColor"
+      0 ColorRGBA second
+       0 float r = 1.000000
+       0 float g = 1.000000
+       0 float b = 1.000000
+       0 float a = 1.000000
+    [6]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Settings"
+      0 ColorRGBA second
+       0 float r = 0.020000
+       0 float g = 0.020000
+       0 float b = 15.000000
+       0 float a = 1.000000
+    [7]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_Settings2"
+      0 ColorRGBA second
+       0 float r = 2.500000
+       0 float g = 0.500000
+       0 float b = 1.000000
+       0 float a = 1.000000
+    [8]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_ViewSensitivity"
+      0 ColorRGBA second
+       0 float r = 1.000000
+       0 float g = 1.000000
+       0 float b = 1.000000
+       0 float a = 0.000000
+    [9]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_VisibilityStatus"
+      0 ColorRGBA second
+       0 float r = 1.000000
+       0 float g = 0.000000
+       0 float b = 1.000000
+       0 float a = -1.000000
+    [10]
+     0 pair data
+      0 FastPropertyName first
+       1 string name = "_WinterSensitivity"
+      0 ColorRGBA second
+       0 float r = 1.000000
+       0 float g = 1.000000
+       0 float b = 1.000000
+       0 float a = 1.000000

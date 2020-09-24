@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- +1 worker golem on villages -->
+  <!--<GuiElement Name="CityImprovementSummonersController" >
+    <Title>Binding Tower</Title>
+    <Description>Mages of the Summoners gather at these points, channeling Dust magics in order to keep the summoned beasts under control.
+	
+
+#FFB43F#INCREASE CONTROL#REVERT#
+Increases by 1 the amount of summons your Empire can control at once.</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/AtlasedBitmaps/Improvements/City/CityImprovementScience2Small" />
+      <Icon Size="Large" Path="Gui/DynamicBitmaps/Improvements/City/CityImprovementScience2Large" />
+    </Icons>
+  </GuiElement>-->
+
+
+</Datatable>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Golem Factory -->
+  <UnitProfileNames Name="UnitProfileGolemFactoryHero1">
+    <Name>%HeroNameGolemFactoryHero1Version1Title</Name>
+
+  </UnitProfileNames>
+
+
+</Datatable>

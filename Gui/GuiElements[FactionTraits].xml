@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+  <!-- ########################################## -->
+  <!-- ######         Golem Factory         ###### -->
+  <!-- ########################################## -->
+
+  <!-- Golem Factory -->
+  
+  <GuiElement Name="FactionTraitSummoners1">
+    <Title>Summoners</Title>
+    <Description>The ability to Summon demons from the metaphysical to the physical plane of Auriga.</Description>
+    <TooltipElement>
+      <EffectOverride>%FactionTraitSummonersTooltipEffect</EffectOverride>
+    </TooltipElement>
+	
+  </GuiElement>
+  
+  <GuiElement Name="FactionTraitArchitectsUnit2">
+    <Title>%UnitBodyGolemCollectorTitle</Title>
+    <Description>%UnitBodyGolemCollectorDescription</Description>
+  </GuiElement>
+ 
+  
+  <GuiElement Name="FactionTraitArchitectsUnit3">
+    <Title>%UnitBodyGolemSettler</Title>
+    <Description>%UnitBodyGolemSettlerDescription</Description>
+  </GuiElement>
+ 
+  
+  <GuiElement Name="FactionTraitArchitectsUnit4">
+    <Title>%UnitBodyEvoker</Title>
+    <Description>%UnitBodyEvokerDescription</Description>
+  </GuiElement>
+  
+    <GuiElement Name="FactionTraitArchitectsUnit5">
+    <Title>%UnitBodyYggdraDemonTitle</Title>
+    <Description>%UnitBodyYggdraDemonDescription</Description>
+  </GuiElement>
+  
+  <GuiElement Name="FactionTraitArchitectsUnit6">
+    <Title>%UnitBodyBelphagorDemonTitle</Title>
+    <Description>%UnitBodyBelphagorDemonDescription</Description>
+  </GuiElement>
+</Datatable>

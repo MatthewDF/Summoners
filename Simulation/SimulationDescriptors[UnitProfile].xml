@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ################################### -->
+  <!-- ####### HERO PROFILES ###### -->
+  <!-- ################################### -->
+
+  <SimulationDescriptor Name="UnitProfileGolemFactoryHero1"                     Type="UnitProfile">
+    <SimulationModifierDescriptors>
+      <SimulationModifierDescriptor       TargetProperty="BaseAttributeAttack"        Operation="Addition"  Value="31"/>
+      <SimulationModifierDescriptor       TargetProperty="BaseAttributeDefense"       Operation="Addition"  Value="26"/>
+      <SimulationModifierDescriptor       TargetProperty="BaseAttributeInitiative"    Operation="Addition"  Value="12"/>
+      <SimulationModifierDescriptor       TargetProperty="BaseAttributeDamage"        Operation="Addition"  Value="35"/>
+      <SimulationModifierDescriptor       TargetProperty="BaseMaximumHealth"          Operation="Addition"  Value="128"/>
+    </SimulationModifierDescriptors>
+  </SimulationDescriptor>
+
+</Datatable>

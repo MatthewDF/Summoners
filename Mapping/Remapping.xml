@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  
+  <!--Summoners Evoker -->
+  <RemappingDefinition Path="Prefabs/Armies/UnitBodyEvoker" 
+                       RetargetPath="Prefabs/Armies/UnitBodySeaMonsterAppendage3">
+    <MaterialData Name="CH_SeaMonster_01">
+      <MaterialProperty Name="_MainTex">Textures/Sea_Monster_DIFF.png</MaterialProperty>
+    </MaterialData>
+  </RemappingDefinition>
+  
+   <RemappingDefinition Path="Prefabs/Armies/UnitBodyYggdraDemon" 
+                       RetargetPath="Prefabs/Armies/UnitBodyColossusEarth">
+    <MaterialData Name="Ch_Colossus_Earth">
+      <MaterialProperty Name="_MainTex">Textures/Ch_Colossus_Earth_DIFF.png</MaterialProperty>
+    </MaterialData>
+  </RemappingDefinition>  
+     
+   <RemappingDefinition Path="Prefabs/Armies/UnitBodyBelphagorDemon" 
+                       RetargetPath="Prefabs/Armies/UnitBodyRageWizardsHero">
+    <MaterialData Name="Ch_RWizards_Hero">
+      <MaterialProperty Name="_MainTex">Textures/Ch_RWizards_Hero_DIFF.png</MaterialProperty>
+    </MaterialData>
+  </RemappingDefinition> 
+
+</Datatable>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <GuiElement Name="DistrictImprovementArchitects1">
+    <Title>%DistrictImprovementArchitects1Title</Title>
+    <Description>%DistrictImprovementArchitects1Description</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/AtlasedBitmaps/Improvements/City/CityImprovementRageWizards2Small" />
+      <Icon Size="Large" Path="Gui/DynamicBitmaps/Improvements/City/CityImprovementRageWizards2Large" />
+    </Icons>
+  </GuiElement>
+
+  <ExtendedGuiElement Name="DistrictImprovementSummonersAvailability">
+    <TooltipElement  Ignore="true">
+      <EffectOverride>%DistrictImprovementSummonersAvailabilityTooltipEffect</EffectOverride>
+    </TooltipElement>
+  </ExtendedGuiElement>
+
+<GuiElement Name="FreeDistrictImprovementArchitects1">
+    <Title>%DistrictImprovementArchitects1Title</Title>
+    <Description>%DistrictImprovementArchitects1Description</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/AtlasedBitmaps/Improvements/City/CityImprovementRageWizards2Small" />
+      <Icon Size="Large" Path="Gui/DynamicBitmaps/Improvements/City/CityImprovementRageWizards2Large" />
+    </Icons>
+  </GuiElement>
+
+  <GuiElement Name="DistrictImprovementArchitects1Necrophage">
+    <Title>%DistrictImprovementArchitects1Title</Title>
+    <Description>%DistrictImprovementArchitects1Description</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/AtlasedBitmaps/Improvements/City/CityImprovementRageWizards2Small" />
+      <Icon Size="Large" Path="Gui/DynamicBitmaps/Improvements/City/CityImprovementRageWizards2Large" />
+    </Icons>
+  </GuiElement>
+
+  <ExtendedGuiElement Name="DistrictImprovementSummonersNecrophageAvailability">
+    <TooltipElement  Ignore="true">
+      <EffectOverride>%DistrictImprovementArchitects1NecrophageAvailabilityTooltipEffect</EffectOverride>
+    </TooltipElement>
+  </ExtendedGuiElement>
+
+  
+
+</Datatable>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+
+  <!-- ########################################## -->
+  <!-- ######        MAJOR FACTIONS        ###### -->
+  <!-- ########################################## -->
+
+  <!-- Golem Factory -->
+
+  <FactionTrait Name="FactionTraitSummoners1"                SubCategory="AffinityTrait"                                            Cost="10">
+    <SimulationDescriptorReference Name="FactionTraitCultists7"/> 
+  </FactionTrait>
+  
+  
+  <!--<FactionTrait Name="FactionTraitArchitectsUnit2" SubCategory="UnitTrait">
+    <FactionTraitTooltipOverride Type="Constructible" OverrideName="UnitBodyGolemCollector"/>
+  </FactionTrait>-->
+ 
+   <FactionTrait Name="FactionTraitArchitectsUnit4" SubCategory="UnitTrait">
+    <FactionTraitTooltipOverride Type="Constructible" OverrideName="UnitBodyEvoker"/>
+  </FactionTrait>
+  
+    <FactionTrait Name="FactionTraitArchitectsUnit5" SubCategory="UnitTrait">
+    <FactionTraitTooltipOverride Type="Constructible" OverrideName="UnitBodyYggdraDemon"/>
+  </FactionTrait>
+
+    <FactionTrait Name="FactionTraitArchitectsUnit6" SubCategory="UnitTrait">
+    <FactionTraitTooltipOverride Type="Constructible" OverrideName="UnitBodyBelphagorDemon"/>
+  </FactionTrait>
+  
+</Datatable>

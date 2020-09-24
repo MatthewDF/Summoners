@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- #################################### -->
+  <!-- #### BROKEN LORDS HERO PROFILES #### -->
+  <!-- #################################### -->
+
+    <UnitProfile Name="UnitProfileGolemFactoryHero1"                     ProfileGuiElementName="UnitProfileGolemFactoryHero1">
+    <Tags>Pool</Tags>
+    <UnitBodyDefinitionReference Name="UnitBodyBrokenLordsHero"/>
+    <SimulationDescriptorReference Name="UnitProfileGolemFactoryHero1"/>
+    <SimulationDescriptorReference Name="VariationD" />
+    <SimulationDescriptorReference Name="UnitHero"/>
+    <ProfileAbilityReferences Name="UnitAbilityIndustryPopulationEfficiency"  Level="0"/>
+	<ProfileAbilityReferences Name="UnitAbilityDustPopulationEfficiency"        Level="0"/>
+	<ProfileAbilityReferences Name="UnitAbilitySpy"                           Level="0"/>
+   <UnitSkillAllocationSchemeReference Name="HeroSkillAllocationSchemeLeaderBattle"/>
+  
+  </UnitProfile>
+
+  
+  
+</Datatable>

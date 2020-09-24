@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+<!--Demon Abilities-->
+
+  <GuiElement Name="UnitAbilityYggdraBounty0">
+    <Title>Yggdra's Bounty</Title>
+    <Description>A Yggdra Demon's bounty.</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/DynamicBitmaps/UnitAbilities/AbilityColossusNatureSmall" />
+    </Icons>
+  </GuiElement>
+  
+  <GuiElement Name="UnitAbilityBelphagorWisdom0">
+    <Title>Belphagor's Wisdom</Title>
+    <Description>A Belphagor Demon's Wisdom.</Description>
+    <Icons>
+      <Icon Size="Small" Path="Gui/DynamicBitmaps/UnitAbilities/AbilityColossusNatureSmall" />
+    </Icons>
+  </GuiElement>
+  
+  
+</Datatable>

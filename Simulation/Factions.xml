@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ########################################## -->
+  <!-- ######        Golem Factory         ###### -->
+  <!-- ########################################## -->
+
+  <Faction Name="FactionGolemFactory"     Standard="true"   Author="Mazu" Priority="180">
+    <Affinity Name="AffinityGolemFactory"/>
+    <AffinityMapping Name="AffinityMappingRageWizards"/>
+  <Trait Name="FactionTraitEconomy8Positive" />
+  <Trait Name="FactionTraitBrokenLords1" />
+  <Trait Name="FactionTraitCultists9" />
+  <Trait Name="FactionTraitCultists11" />
+  <Trait Name="FactionTraitEconomy1PositiveLevel1" />
+  <Trait Name="FactionTraitEconomy2PositiveLevel1" />	
+	</Faction>
+
+</Datatable>

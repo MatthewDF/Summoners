@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--============ TITLE: Summoner Test Quest ============-->
+  <QuestDefinition Name="MainQuestSummoners-Chapter1" Category="MainQuest" SubCategory="Main" Cooldown="0" SkipLockedQuestTarget="false" NumberOfConcurrentInstances="0" NumberOfOccurencesPerEmpire="1" NumberOfOccurencesPerGame="0">
+
+    <!--============ TAGS ============-->
+    <Tags>MainQuest,Chapter1,BeginTurn</Tags>
+
+    <!--============ PREREQUISITES ============-->
+    <Prerequisites Target="$(Empire)">
+      <PathPrerequisite Flags="Prerequisite">../EmpireTypeMajor,AffinityGolemFactory</PathPrerequisite>
+      <InterpreterPrerequisite Flags="Prerequisite">$Count(EmpireTypeMajor/ClassCity) ge 1</InterpreterPrerequisite>
+    </Prerequisites>
+	
+    <!--============ VARIABLES ============-->
+    <!--Grab player's Empire-->
+	<Var VarName="$PlayerEmpire">
+		<From Source="$Empire"/>
+	</Var>
+	<!--Grab city of current Empire-->
+	<Vars>
+	<Var VarName="$EmpireCity">
+		<Any>
+		<From Source="$Empire.$Cities"/>
+		</Any>
+	 </Var>
+	 <!-- Grab current region of said city -->
+	 <Var VarName="$EmpireCityRegion">
+		<From Source="$EmpireCity.$Region"/>
+	</Var>
+	<!--Get all region surrounding main Empire city/region -->
+	<!--<Var VarName="$NearbyRegions">
+	<From Source="$EmpireCityRegion.$RegionwithNeighbourRegions">
+		<Where>
+			<FilterRegionIsOnSameContinent RegionContextVarName="$EmpireCityRegion"/>
+			<FilterRegionByDistance PositionToCompareVarName="$EmpireCityRegion" DistanceMin="1"/>			
+		</Where>
+	 </From>
+	</Var>
+	--> 
+	<!-- Select nearest region for Ruin -->
+	<!--<Var VarName="$NearestRegion">
+		<From Source="$NearbyRegions">
+			<OrderBy>
+				<SortRegionByDistance SortBy="Nearest" PositionToCompareVarName="$RuinRegion"/>
+			</OrderBy>
+		</From>
+	</Var>	-->
+	
+	<!--Now select a ruin to check-->
+	<Var VarName="$RuintoCheck">
+		<Limit LimitMin="5" LimitMax="6">
+			<From Source="$EmpireCityRegion.$PointsOfInterest">
+				<Where>
+				  <PathPrerequisite>PointOfInterestTypeQuestLocation</PathPrerequisite>
+				</Where>
+			  </From>
+			</Limit>
+		  </Var>
+		
+<!--  <LocalizationVar LocalizationKey="$InitialQuestPOIType" Source="$InitialQuestPOI"/>-->
+      <LocalizationVar LocalizationKey="$QuestPOI1Type" Source="$RuintoCheck"/>
+
+	  </Vars>
+    <!--============ SEQUENCE ============-->
+    <Controller_Sequence>
+      <Action_LockQuestTarget TargetVarName="$RuintoCheck" LockOption="Lock"/>
+<!--  <Action_LockQuestTarget TargetVarName="$InitialQuestPOI" LockOption="Lock"/>-->
+		
+
+      <!--Step 1-->
+      <Action_UpdateStep StepName="MainQuestSummoners-Chapter1-Step1" State="InProgress" />
+	  <Action_AddQuestMarker TargetEntityVarName="$RuintoCheck" Tags="POI" RevealUnexploredLand="true" MarkerVisibleInFogOfWar="true" Output_QuestMarkerVarName="$QuestMarkerQuestPOIToInspect1"/>
+
+      <Decorator_Inspect TargetEntityVarName="$RuintoCheck" Output_InstigatorSimObjectVarName="$InspectionInstigatorSimObject" PrerequisiteNotVerifiedMessage="%QuestPrerequisiteNotVerified" Initiator="Empire">
+        <!--<ConditionCheck_Prerequisite>
+          <Prerequisites Target="$InspectionInstigatorSimObject">
+          </Prerequisites>
+        </ConditionCheck_Prerequisite>-->
+      </Decorator_Inspect>
+	  
+	  
+	  <Action_RemoveQuestMarker TargetQuestMarkerVarName="$QuestMarkerQuestPOIToInspect1"/>
+      <Action_LockQuestTarget TargetVarName="$RuintoCheck" LockOption="Unlock"/>
+      <Action_UpdateStep StepName="MainQuestSummoners-Chapter1-Step1" State="Completed"/>
+      <Action_UpdateQuest State="Completed" />
+	  
+
+      <!--Step 2-->
+<!--<Action_UpdateStep StepName="MainQuestSummoners-Chapter1Alt-Step2" State="InProgress" />
+      <Action_UpdateStep StepName="MainQuestSummoners-Chapter1Alt-Step2" State="Completed" />
+      
+      <Action_UpdateQuest State="Completed"/>-->
+    </Controller_Sequence>
+	
+    <!--============ REWARDS ============-->
+    <Steps>
+      <Step Name="MainQuestSummoners-Chapter1-Step1">
+        <Reward Droplist="DroplistSummoners1TechnologyReward" Picks="1"/>
+      </Step>
+    </Steps>
+
+    <!--============ TRIGGER ============-->
+	
+  </QuestDefinition>
+  
+</Datatable>

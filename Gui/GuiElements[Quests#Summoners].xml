@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <QuestGuiElement Name="MainQuestSummoners-Chapter1">
+    <Title>Summoner Quest Test</Title>
+    <Description>Summoner Quest Test Desc</Description>
+    <Objective>Summoner Quest Test Objective</Objective>
+    <Outcome>Summoner Quest Test Outcome</Outcome>
+    <Icons>
+      <Icon Path="Gui/DynamicBitmaps/Quests/QuestColonize" Size="Small" />
+    </Icons>
+    <!--<Steps>
+      <Step Name="SideQuestPOI#0001-Step1">%SideQuestPOI#0001-Step1</Step>
+      <Step Name="SideQuestPOI#0001-Step2">%SideQuestPOI#0001-Step2</Step>
+      <Step Name="SideQuestPOI#0001-Step3">%SideQuestPOI#0001-Step3</Step>
+      <Step Name="SideQuestPOI#0001-Step4">%SideQuestPOI#0001-Step4</Step>
+    </Steps>-->
+  </QuestGuiElement>
+  
+</Datatable>

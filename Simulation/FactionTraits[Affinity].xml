@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ########################################## -->
+  <!-- ######        MAJOR FACTIONS        ###### -->
+  <!-- ########################################## -->
+
+  <!-- Golem Factory -->
+<FactionAffinity Name="AffinityGolemFactory" SubCategory="MajorFactionAffinity" Hidden="false" Cost="80">
+    <SimulationDescriptorReference Name="AffinityGolemFactory"/>
+    <DefaultAffinityMapping Name="AffinityMappingRageWizards"/>
+    <Personality Name="PersonalityAffinityCultists"/>
+    <SubTrait Name="FactionTraitMajorFaction" Hidden="true"/>
+	<SubTrait Name="FactionTraitSummoners1"/>   				<!-- Summoners -->
+<!--<SubTrait Name="FactionTraitReplicantsUnit1"/>
+    <SubTrait Name="FactionTraitArchitectsUnit2"/>
+	<SubTrait Name="FactionTraitArchitectsUnit3"/>
+    <SubTrait Name="FactionTraitArchitectsUnit4"/>
+    <SubTrait Name="FactionTraitArchitectsUnit5"/>
+    <SubTrait Name="FactionTraitArchitectsUnit6"/>-->	
+    <Command Name="CreateArmy" Arguments="UnitProfileGolemFactoryHero1,UnitDesignCultistsSettler#1,UnitDesignEngineers#1,UnitDesignEngineers#1"/>
+    <Command Name="TransferResources" Arguments="EmpireMoney,50"/>
+  </FactionAffinity>
+</Datatable>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationPair Name="%UnitBodyGolemSettler">Settlers</LocalizationPair>
+  <LocalizationPair Name="%UnitBodyGolemSettlerDescription">Factory golems that specialize in establishing new factory cities.</LocalizationPair>
+
+  <LocalizationPair Name="%UnitBodyGolemCollectorTitle">Collectors</LocalizationPair>
+  <LocalizationPair Name="%UnitBodyGolemCollectorDescription">Factory golems that specialize in mining resources and delivering them to the Architect's factory city.</LocalizationPair>
+  
+  <LocalizationPair Name="%UnitBodyEvoker">Evoker</LocalizationPair>
+  <LocalizationPair Name="%UniUnitBodyEvokercription">Mage of ... capable of evoking powerful beasts into existence.</LocalizationPair>
+
+  <LocalizationPair Name="%UnitBodyYggdraDemonTitle">Yggdra Demon</LocalizationPair>
+  <LocalizationPair Name="%UnitBodyYggdraDemonDescription">The Yggdra Demon is a demon of both bounty and growth, as well as famine and decay.</LocalizationPair>
+  
+  <LocalizationPair Name="%UnitBodyBelphagorDemonTitle">Belphagor Demon</LocalizationPair>
+  <LocalizationPair Name="%UnitBodyBelphagorDemonDescription">Placeholder </LocalizationPair>
+  
+  <LocalizationPair Name="%AffinityMappingGolemFactoryTitle">Architects Appearance</LocalizationPair>
+  <LocalizationPair Name="%AffinityMappingGolemFactoryDescription">Your custom faction will display the 2D and 3D visuals of the Architects.</LocalizationPair>
+
+  <LocalizationPair Name="%UnitGolemMilitiaTitle">Militia Golem</LocalizationPair>
+  <LocalizationPair Name="%UnitGolemMilitiaDescription">Standard security golems that can be used as Factory defense forces should the Factory ever come under attack.</LocalizationPair>  
+  
+  <LocalizationPair Name="%FactionTraitSummonersTooltipEffect">Ritual summoning</LocalizationPair>
+  
+  <LocalizationPair Name="%FactionGolemFactoryTitle">Summoners</LocalizationPair>
+  <LocalizationPair Name="%FactionGolemFactoryDescription"> </LocalizationPair>
+  <LocalizationPair Name="%AffinityGolemFactoryVictoryType">Main Victory Type: Production</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyCaption">Crafts</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle1">Battalion of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle2">Squad of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle3">Production of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle4">Unit of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle5">Troop of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle6">Collection of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle7">Domination of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle8">Marching of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle9">Assembly of</LocalizationPair>
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyTitle10">Summoning of</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory0">Chandwara</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory1">Reyap</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory2">Angratad</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory3">Pukopi</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory4">Samutanda</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory5">Theramanya</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory6">Shaosisli</LocalizationPair>
+  <LocalizationPair Name="%AILeaderAffinityGolemFactory7">Uratewatan</LocalizationPair>
+  
+  <LocalizationPair Name="%FactionAffinityGolemFactoryArmyColossusTitle">Ultimate</LocalizationPair>  
+  
+  <LocalizationPair Name="%HeroNameGolemFactoryHero1Version1Title">Craft Alpha</LocalizationPair>
+  <LocalizationPair Name="%UnitProfileGolemFactoryHero1Title">Craft Alpha</LocalizationPair>
+  <LocalizationPair Name="%UnitProfileGolemFactoryHero1Description">A golem developed by one of the Factory's lost elite researchers. Designated 'Craft Alpha', this unit's capabilities are unknown. </LocalizationPair>
+
+  <LocalizationPair Name="%DistrictImprovementArchitects1Title">Binding Tower</LocalizationPair>
+  <LocalizationPair Name="%DistrictImprovementArchitects1Description">PlaceholderDesc</LocalizationPair>
+
+  
+  <LocalizationPair Name="%DistrictImprovementSummonersAvailabilityTooltipEffect">
+  
+#FFB43F#INCREASE CONTROL#REVERT#
+Increases by 1 the amount of demons your Empire can control at once.</LocalizationPair>
+
+  <LocalizationPair Name="%DistrictImprovementSummonersTitle">Binding Tower</LocalizationPair>
+  <LocalizationPair Name="%DistrictLevel1Title">District Level 2</LocalizationPair>
+
+  
+  
+  </Datatable>

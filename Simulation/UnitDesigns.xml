@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+  <!-- Golem Makers UNIT-->
+  <!--<UnitDesign Name="UnitDesignGolemSettler#1" Model="1666353">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemSettler"/>
+  </UnitDesign>-->
+
+  <UnitDesign Name="UnitDesignEngineers#1" Model="1666354">
+    <UnitBodyDefinitionReference Name="UnitBodyEvoker"/>
+  </UnitDesign>
+  
+  <UnitDesign Name="UnitDesignYggdra#1" Model="1666355">
+    <UnitBodyDefinitionReference Name="UnitBodyYggdraDemon"/>
+  </UnitDesign>
+  
+  <UnitDesign Name="UnitDesignBelphagor#1" Model="1666356">
+    <UnitBodyDefinitionReference Name="UnitBodyBelphagorDemon"/>
+  </UnitDesign>
+  
+  <!--<UnitDesign Name="UnitDesignGolemCollector#1" Model="1666357">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemCollector"/>
+  </UnitDesign>  -->
+  
+  <!-- MILITIA ERA1 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra1"                 Model="1666358" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era1MilitiaBonus" />
+    <Tags>Militia,Era1</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2IronTier1#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2IronTier1#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadIronTier1"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoIronTier1"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsIronTier1"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+
+  <!--  MILITIA ERA2 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra2"                 Model="1666359" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era2MilitiaBonus" />
+    <PathPrerequisite Flags="Prerequisite,Discard,Validity">.../EmpireTypeMajor/ClassResearch,TechnologyEra2</PathPrerequisite>
+    <Tags>Militia,Era2</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2IronTier2#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2IronTier2#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadIronTier2"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoIronTier2"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsIronTier2"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+
+  <!--  MILITIA ERA3 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra3"                 Model="1666360" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era3MilitiaBonus" />
+    <PathPrerequisite Flags="Prerequisite,Discard,Validity">.../EmpireTypeMajor/ClassResearch,TechnologyEra3</PathPrerequisite>
+    <Tags>Militia,Era3</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2IronTier3#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2IronTier3#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadIronTier3"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoIronTier3"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsIronTier3"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+
+  <!--  MILITIA ERA4 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra4"                 Model="1666361" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era4MilitiaBonus" />
+    <PathPrerequisite Flags="Prerequisite,Discard,Validity">.../EmpireTypeMajor/ClassResearch,TechnologyEra4</PathPrerequisite>
+    <Tags>Militia,Era4</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2DustTier1#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2DustTier1#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadDustTier1"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoDustTier1"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsDustTier1"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+
+  <!--  MILITIA ERA5 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra5"                 Model="1666362" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era5MilitiaBonus" />
+    <PathPrerequisite Flags="Prerequisite,Discard,Validity">.../EmpireTypeMajor/ClassResearch,TechnologyEra5</PathPrerequisite>
+    <Tags>Militia,Era5</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2DustTier2#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2DustTier2#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadDustTier2"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoDustTier2"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsDustTier2"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+
+  <!--  MILITIA ERA6 [HIDDEN] -->
+  <UnitDesign Name="UnitDesignGolemFactoryMilitiaEra6"                 Model="1666363" Hidden="true">
+    <UnitBodyDefinitionReference Name="UnitBodyGolemFactoryMilitia" />
+    <SimulationDescriptorReference Name="Era6MilitiaBonus" />
+    <PathPrerequisite Flags="Prerequisite,Discard,Validity">.../EmpireTypeMajor/ClassResearch,TechnologyEra6</PathPrerequisite>
+    <Tags>Militia,Era6</Tags>
+    <UnitEquipmentSet>
+      <Slot Name="MainHand"                        ItemName="ItemSpear2DustTier3#1" />
+      <Slot Name="OffHand"                         ItemName="ItemSpear2DustTier3#1" />
+      <Slot Name="Head"                            ItemName="ItemHeadDustTier3"     />
+      <Slot Name="Torso"                           ItemName="ItemTorsoDustTier3"    />
+      <Slot Name="Legs"                            ItemName="ItemLegsDustTier3"     />
+      <Slot Name="Accessory0" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory1" SlotType="Accessory" ItemName="" />
+      <Slot Name="Accessory2" SlotType="Accessory" ItemName="" />
+    </UnitEquipmentSet>
+  </UnitDesign>
+  
+  
+  </Datatable>
