@@ -4,9 +4,9 @@
   
   <!--Summoners Evoker -->
   <RemappingDefinition Path="Prefabs/Armies/UnitBodyEvoker" 
-                       RetargetPath="Prefabs/Armies/UnitBodySeaMonsterAppendage3">
-    <MaterialData Name="CH_SeaMonster_01">
-      <MaterialProperty Name="_MainTex">Textures/Sea_Monster_DIFF.png</MaterialProperty>
+                       RetargetPath="Prefabs/Armies/UnitBodyRageWizardsSettler">
+    <MaterialData Name="Ch_RWizards_Settler">
+      <MaterialProperty Name="_MainTex">Textures/Ch_RWizards_Settler_DIFF.png</MaterialProperty>
     </MaterialData>
   </RemappingDefinition>
   
@@ -18,9 +18,9 @@
   </RemappingDefinition>  
      
    <RemappingDefinition Path="Prefabs/Armies/UnitBodyBelphagorDemon" 
-                       RetargetPath="Prefabs/Armies/UnitBodyRageWizardsHero">
-    <MaterialData Name="Ch_RWizards_Hero">
-      <MaterialProperty Name="_MainTex">Textures/Ch_RWizards_Hero_DIFF.png</MaterialProperty>
+                       RetargetPath="Prefabs/Armies/UnitBodyColossusDust">
+    <MaterialData Name="Ch_Colossus_Dust">
+      <MaterialProperty Name="_MainTex">Textures/Ch_Colossus_Dust_DIFF.png</MaterialProperty>
     </MaterialData>
   </RemappingDefinition> 
 

@@ -158,6 +158,7 @@
     <UnitAbilityReference Name="UnitAbilityColossusNature"/>
     <UnitAbilityReference Name="UnitAbilitySolitary"/>
     <UnitAbilityReference Name="UnitAbilitySlow" Level="0"/>
+
   
     <PathPrerequisite Flags="Prerequisite">.../EmpireTypeMajor,AffinityGolemFactory</PathPrerequisite>
     <UnitDesignPrerequisites>
@@ -172,7 +173,7 @@
     <CustomCost ResourceName="EmpireMoney" Instant="true">50 + (50 * $Property(../ClassEmpire:CostIncreaseFromEra)</CustomCost>
 
 	
-    <SimulationDescriptorReference Name="AffinityGolemFactory"/>
+    <SimulationDescriptorReference Name="AffinityColossus"/>
     <SimulationDescriptorReference Name="UnitTypeSummonBelphagor"/>
     <SimulationDescriptorReference Name="UnitTypeColossus" />
     <SimulationDescriptorReference Name="UnitTypeSolitary" />	

@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <XmlMapping Name="ClassArmy">
+    <GameObject Name="ClassArmy" Prefab="Prefabs/Armies/WorldArmy"/>
+  </XmlMapping>
+
+  <XmlMapping Name="ClassConstruction">
+    <Node Condition="$(ConstructibleElementCategory) eq 'PointOfInterestImprovement'">
+      <Node Condition="$(Type) eq 'Village'">
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Environments/PointsOfInterest/Construction_PointOfInterestImprovement_$(ConstructibleElementName)_00"/>
+        <Fallback>
+          <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Environments/PointsOfInterest/Construction_PointOfInterestImprovement_$(Type)_00"/>
+        </Fallback>
+      </Node>
+      <Node Condition="$(Type) eq 'ResourceDeposit'">
+        <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_PointOfInterestImprovement_$(Type)_$(ResourceType)_00"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/Construction_PointOfInterestImprovement_$(Type)_$(ResourceType)_00"/>
+        </Fallback>
+      </Node>
+
+      <Node Condition="$(MappingType) eq 'DefensiveTower'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_PointOfInterestImprovement_$(PrefabName)"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/Construction_PointOfInterestImprovement_$(PrefabName)"/>
+        </Fallback>
+      </Node>
+
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_PointOfInterestImprovement_$(ConstructibleElementName)_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_PointOfInterestImprovement_$(Type)_00"/>
+        <Fallback>
+          <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_PointOfInterestImprovement_$(Type)_00"/>
+        </Fallback>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'DistrictImprovement'">
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_$(ConstructibleElementName)_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_$(ConstructibleElementName)_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'FreeDistrictImprovement'">
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_$(ConstructibleElementName)_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_$(ConstructibleElementName)_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'ConstructibleDistrict'">
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_$(ConstructibleElementName)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'UnitDesign'">
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_$(UnitBodyDefinition)_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_$(UnitBodyDefinition)_00"/>
+      </Fallback>
+    </Node>
+
+    <Fallback>
+      <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/Construction_$(ConstructibleElementCategory)_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/Construction_$(ConstructibleElementCategory)_00"/>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="ClassDistrict">
+    <GameObject Name="ClassDistrict" Prefab="Prefabs/Cities/WorldDistrict"/>
+  </XmlMapping>
+
+  <XmlMapping Name="ClassPointOfInterest">
+    <Node Condition="$(Type) eq 'QuestLocation'" >
+      <Variation Weights="20;20;20;20;20" Values="00;01;02;03;04"/>
+      <GameObject Name="PointOfInterest:QuestLocation" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_QuestLocation_$(QuestLocationType)_$(Variation)"/>
+    </Node>
+
+    <Node Condition="$(Type) eq 'NavalQuestLocation'" >
+      <Variation Weights="20;20;20;20;20" Values="00;01;02;03;04"/>
+      <GameObject Name="PointOfInterest:NavalQuestLocation" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_NavalQuestLocation_$(QuestLocationType)_$(Variation)"/>
+    </Node>
+
+    <GameObject Condition="$(Type) eq 'Facility'" Name="PointOfInterest:Facility" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_Facility_00"/>
+    <GameObject Condition="$(Type) eq 'Citadel'" Name="PointOfInterest:Citadel" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_$(Category)_00"/>
+    <GameObject Condition="$(Type) eq 'ResourceDeposit'" Name="PointOfInterest:ResourceDeposit" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_ResourceDeposit_$(ResourceName)_00"/>
+    <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_$Descriptor(PointOfInterestType)_$Descriptor(BiomeType)_00"/>
+    <Fallback>
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_$Descriptor(PointOfInterestType)_00"/>
+      <Fallback>
+        <GameObject Name="PointOfInterest:Default" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_Default"/>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="DefaultPathRenderer.TransitionFromGroundToWater">
+    <GameObject Name="MovementPoint" Prefab="Prefabs/Interface/Pathfinding_TransitionFromGroundToWater_00"/>
+  </XmlMapping>
+
+  <XmlMapping Name="DefaultPathRenderer.TransitionFromWaterToGround">
+    <GameObject Name="MovementPoint" Prefab="Prefabs/Interface/Pathfinding_TransitionFromWaterToGround_00"/>
+  </XmlMapping>
+
+  <XmlMapping Name="Encounter">
+    <GameObject Name="WorldEncounter" Prefab="Prefabs/Encounters/WorldEncounter"/>
+  </XmlMapping>
+
+  <XmlMapping Name="Item.Colossus">
+    <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(ItemMaterial)"/>
+    <Fallback>
+      <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="Item.Generic">
+    <!--For Tier4 items with exactly same class and same material-->
+    <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(ItemMaterial)Tier$Descriptor(ItemTier)Quest$Descriptor(ItemQuest)"/>
+      <Fallback>
+      <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(ItemMaterial)Quest$Descriptor(ItemQuest)"/>
+      <Fallback>
+        <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(ItemMaterial)Tier$Descriptor(ItemTier)"/>
+        <Fallback>
+          <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(../ClassUnit:UnitType)"/>
+          <Fallback>
+            <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)"/>
+          </Fallback>
+        </Fallback>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="Item.Seafaring">
+    <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)$Descriptor(ItemMaterial)"/>
+    <Fallback>
+      <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/$Descriptor(ItemClass)"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="Item.Pet">
+    <GameObject Name="Item:$(ItemName)" Prefab="Prefabs/Items/Pet/$(ItemName)"/>
+  </XmlMapping>
+
+  <XmlMapping Name="Item.RovingClansBerzerk">
+    <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/Berzerk/$Descriptor(ItemClass)$Descriptor(ItemMaterial)Tier$Descriptor(ItemTier)"/>
+    <Fallback>
+      <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/Berzerk/$Descriptor(ItemClass)$Descriptor(../ClassUnit:UnitType)"/>
+      <Fallback>
+        <GameObject Name="Item:$Descriptor(ItemClass)" Prefab="Prefabs/Items/$Descriptor(ItemClass)/Berzerk/$Descriptor(ItemClass)"/>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="PlacementCursor">
+    <Node Condition="$(ConstructibleElementCategory) eq 'PointOfInterestImprovement'">
+      <Node Condition="$(Type) eq 'Village'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Environments/PointsOfInterest/$(PlacementCursorClass)_$(Type)"/>
+      </Node>
+
+      <Node Condition="$(Type) eq 'ResourceDeposit'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(Type)_$(ResourceType)"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(Type)_$(ResourceType)"/>
+        </Fallback>
+      </Node>
+
+      <Node Condition="$(MappingType) eq 'DefensiveTower'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(PrefabName)"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(PrefabName)"/>
+        </Fallback>
+      </Node>
+
+      <Node Condition="$(MappingType) ne 'DefensiveTower' and $(Type) ne 'ResourceDeposit' and $(Type) ne 'Village'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(Type)"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(Type)"/>
+        </Fallback>
+      </Node>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'ConstructibleDistrict'">
+      <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="($(PlacementCursorClass) eq 'CoastalDistrictImprovementWorldPlacementCursor')">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(PlacementCursorClass) eq 'FreeCoastalDistrictImprovementWorldPlacementCursor'">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="($(ConstructibleElementSubCategory) eq 'SubCategoryWonder')">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElementName))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      </Fallback>
+
+      <GameObject Name="subPart_NormalDistrict" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+    </Node>
+
+    <Node Condition="($(ConstructibleElementSubCategory) eq 'SubCategoryAltarOfAuriga')">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_AltarOfAuriga_00"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_AltarOfAuriga_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="($(ConstructibleElementSubCategory) eq 'SubCategoryDistrictOrbUnlock')">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(PlacementCursorClass) eq 'ColossusWorldPlacementCursor'">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(UnitBodyDefinition)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(UnitBodyDefinition)"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(PlacementCursorClass) eq 'SolitaryUnitWorldPlacementCursor'">
+      <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(UnitBodyDefinition)"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass).$(ConstructibleElement))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(UnitBodyDefinition)"/>
+      </Fallback>
+    </Node>
+
+    <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)"/>
+    <Fallback>
+      <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="PlacementCursor.Ghost">
+
+    <Node Condition="$(Type) eq 'Pillar'">
+      <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Pillars/$(PillarDefinitionName)_Ghost"/>
+    </Node>
+      
+    <Node Condition="$(Type) eq 'TerraformDevice'">
+      <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/TerraformDevices/$(TerraformDeviceDefinitionName)_Ghost"/>
+    </Node>
+
+    <Node Condition="$(Type) eq 'KaijuGhost'">
+      <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Kaijus/$(KaijuTypeDefinitionName)_Ghost"/>
+    </Node>
+
+    <Node Condition="$(Type) eq 'Spell'">
+      <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Effects/Spells/$(SpellDefinitionName)_GhostIdle"/>
+      <Fallback>
+        <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Pillars/Pillar1_Ghost"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementCategory) eq 'PointOfInterestImprovement'">
+      <Node Condition="$(Type) eq 'Village'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Environments/PointsOfInterest/$(PlacementCursorClass)_$(Type)_Ghost_00"/>
+      </Node>
+
+      <Node Condition="$(Type) eq 'ResourceDeposit'">
+        <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(Type)_Ghost_$(ResourceType)_00"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(Type)_Ghost_$(ResourceType)_00"/>
+        </Fallback>
+      </Node>
+
+      <Node Condition="$(MappingType) eq 'DefensiveTower'">
+        <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(PrefabName)_Ghost"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(PrefabName)_Ghost"/>
+        </Fallback>
+      </Node>
+
+      <Node Condition="$(MappingType) ne 'DefensiveTower' and $(Type) ne 'ResourceDeposit' and $(Type) ne 'Village'">
+        <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(Type)_Ghost_00"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(Type)_Ghost_00"/>
+        </Fallback>
+      </Node>
+    </Node>
+
+    <Node Condition="$(PlacementCursorClass) eq 'CoastalDistrictImprovementWorldPlacementCursor'">
+      <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(PlacementCursorClass) eq 'FreeCoastalDistrictImprovementWorldPlacementCursor'">
+      <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(ConstructibleElementSubCategory) eq 'SubCategoryWonder'">
+      <GameObject Name="($(ConstructibleElementName)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElementName)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      </Fallback>
+
+      <GameObject Name="subPart_NormalDistrict" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_Ghost_00"/>
+    </Node>
+
+    <Node Condition="($(ConstructibleElementSubCategory) eq 'SubCategoryAltarOfAuriga')">
+      <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_AltarOfAuriga_Ghost_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_AltarOfAuriga_Ghost_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="($(ConstructibleElementSubCategory) eq 'SubCategoryDistrictOrbUnlock')">
+      <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      <Fallback>
+        <GameObject Name="($(ConstructibleElement)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_$(ConstructibleElementName)_Ghost_00"/>
+      </Fallback>
+    </Node>
+
+    <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/$(AffinityMapping)/$(PlacementCursorClass)_Ghost_00"/>
+    <Fallback>
+      <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Cities/BrokenLords/$(PlacementCursorClass)_Ghost_00"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="PointOfInterest.FX">
+
+    <Node Condition="$Path(PointOfInterestStatusPillaged)">
+      <GameObject Name="PointOfInterestFX:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/FXs/PointOfInterestFx_Any_Pillaged_00"/>
+    </Node>
+
+    <GameObject Name="PointOfInterestFX:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/FXs/PointOfInterestFx_$(Type)_$(Interaction)_00"/>
+   </XmlMapping>
+
+  <XmlMapping Name="PointOfInterest.KaijuLeech">
+    <GameObject Name="FX_KaijuLeech" Prefab="Prefabs/Environments/PointsOfInterest/FXs/PointOfInterestFx_Any_KaijuLeech"/>
+    <!-- <GameObject Name="FX_KaijuLeech" Prefab="Prefabs/Environments/PointsOfInterest/FXs/PointOfInterestFx_$(Type)_KaijuLeech"/> -->
+  </XmlMapping>
+
+  <XmlMapping Name="PointOfInterest.Icon">
+    <Node Condition="$(Type) eq 'QuestLocation'">
+      <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Type)_$(QuestLocationType)_$(Interaction)_00"/>
+    </Node>
+
+    <Node Condition="$(Type) eq 'NavalQuestLocation'">
+      <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Type)_$(QuestLocationType)_$(Interaction)_00"/>
+    </Node>
+
+    <Node Condition="$(Type) eq 'Facility'">
+      <Variation Weights="1" Values="Unrevealed"/>
+      <Node Condition="$Path(RevealedFacility)">
+        <Variation Weights="1" Values="Revealed"/>
+      </Node>
+
+      <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_Facility_$(ResourceName)_$(Variation)_00"/>
+	  <Fallback>
+	    <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Category)_$(Variation)_00"/>
+        <Fallback>
+          <GameObject Name="($(PlacementCursorClass)_Ghost)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Type)_$(Variation)_00"/>
+        </Fallback>
+	  </Fallback>
+    </Node>
+
+    <Node Condition="$(Type) eq 'Citadel'">
+      <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Category)_00"/>
+    </Node>
+
+    <Variation Weights="1" Values="NonExploited"/>
+    <Node Condition="$Path(ExploitedPointOfInterest)">
+      <Variation Weights="1" Values="Exploited"/>
+    </Node>
+
+    <!--<Node Condition="$Path(PointOfInterestStatusPillaged)">
+      <Variation Weights="1" Values="Pillaged"/>
+    </Node>-->
+
+    <Node Condition="$(Type) eq 'ResourceDeposit'">
+      <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Type)_$(ResourceName)_$(Variation)_00"/>
+    </Node>
+
+    <Node Condition="$Path(PointOfInterestTypeVillage,!PacifiedVillage)">
+      <Variation Weights="1" Values="Hostile"/>
+    </Node>
+
+    <Node Condition="$Path(PacifiedVillage,!ExploitedPointOfInterest)">
+      <Variation Weights="1" Values="Destroyed"/>
+    </Node>
+
+    <GameObject Name="PointOfInterestIcon:$Descriptor(PointOfInterestType)" Prefab="Prefabs/Environments/PointsOfInterest/Icons/PointOfInterestIcon_$(Type)_$(Variation)_00"/>
+  </XmlMapping>
+
+  <XmlMapping Name="PointOfInterest.Improvement">
+    <Node Condition="$(Type) eq 'Village'">
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/PointOfInterestImprovement_$Descriptor(PointOfInterestImprovement)_00"/>
+      <Fallback>
+        <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/PointOfInterestImprovement_$(Type)_$(AffinityMapping)_Destroyed_00"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(Type) eq 'ResourceDeposit'">
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(AffinityMapping)/PointOfInterestImprovement_ResourceExtractor_$(ResourceType)_00"/>
+      <Fallback>
+        <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/PointOfInterestImprovement_ResourceExtractor_$(ResourceType)_00"/>
+        <Fallback>
+          <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/BrokenLords/PointOfInterestImprovement_ResourceExtractor_$(ResourceType)_00"/>
+        </Fallback>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$(MappingType) eq 'DefensiveTower'">
+        <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/$(AffinityMapping)/PointOfInterestImprovement_$(PrefabName)"/>
+        <Fallback>
+            <GameObject Name="($(PlacementCursorClass))" Prefab="Prefabs/Cities/BrokenLords/PointOfInterestImprovement_$(PrefabName)"/>
+        </Fallback>
+    </Node>
+
+    <Node Condition="$(Type) eq 'Facility'">
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_Facility_$(ResourceName)_00"/>
+      <Fallback>
+        <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_$(Category)_00"/>
+      </Fallback>
+    </Node>
+
+    <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(AffinityMapping)/PointOfInterestImprovement_$Descriptor(PointOfInterestImprovement)_00"/>
+    <Fallback>
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(AffinityMapping)/PointOfInterestImprovement_$(Type)_00"/>
+      <Fallback>
+        <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/PointOfInterestImprovement_$Descriptor(PointOfInterestImprovement)_00"/>
+        <Fallback>
+          <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/PointOfInterestImprovement_$(Type)_00"/>
+          <Fallback>
+            <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/BrokenLords/PointOfInterestImprovement_$Descriptor(PointOfInterestImprovement)_00"/>
+            <Fallback>
+              <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Cities/BrokenLords/PointOfInterestImprovement_$(Type)_00"/>
+            </Fallback>
+          </Fallback>
+        </Fallback>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="PointOfInterest.NoImprovement">
+    <Node Condition="$(Type) eq 'Village'">
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/PointOfInterestImprovement_$(Type)_$(AffinityMapping)_Destroyed_00"/>
+    </Node>
+    
+    <Node Condition="$(Type) eq 'Facility'">
+      <GameObject Name="PointOfInterest:$Descriptor(PointOfInterestImprovement)" Prefab="Prefabs/Environments/PointsOfInterest/WorldPointOfInterest_UnrevealedFacility_00"/>
+    </Node>
+  </XmlMapping>
+
+  <XmlMapping Name="TransferUnitsPlacementCursor">
+    <GameObject Name="TransferUnitsWorldPlacementCursor" Prefab="Prefabs/Armies/TransferUnitsWorldPlacementCursor"/>
+  </XmlMapping>
+
+  <XmlMapping Name="TransferUnitsPlacementCursor.Destination">
+    <GameObject Name="TransferUnitsWorldPlacementCursor" Prefab="Prefabs/Armies/TransferUnitsWorldPlacementCursor_Destination"/>
+  </XmlMapping>
+
+  <XmlMapping Name="TeleportCursor.Origin">
+    <GameObject Name="TeleportCursor" Prefab="Prefabs/Armies/TeleportCursor_Origin"/>
+  </XmlMapping>
+
+  <XmlMapping Name="TeleportInRangeCursor.Origin">
+    <GameObject Name="TeleportCursor" Prefab="Prefabs/Armies/TeleportCursorColossusAir_Origin"/>
+  </XmlMapping>
+
+  <XmlMapping Name="TeleportCursor.Destination">
+    <GameObject Name="TeleportCursor" Prefab="Prefabs/Armies/TeleportCursor_Destination"/>
+  </XmlMapping>
+
+  <XmlMapping Name="TeleportInRangeCursor.Destination">
+    <GameObject Name="TeleportCursor" Prefab="Prefabs/Armies/TeleportCursorColossusAir_Destination"/>
+  </XmlMapping>
+
+  <XmlMapping Name="UnitMoveFx">
+    <GameObject Name="Fx_UnitMove_$Descriptor(../ClassUnit:UnitType)" Prefab="Prefabs/Effects/UnitMove/Fx_UnitMove_$Descriptor(../ClassUnit:UnitType)"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldDistrict">
+    <Variation Weights="1" Values="00"/>
+
+    <Node Condition="$Path(DistrictImprovementWonder)" >
+      <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_$Descriptor(DistrictImprovementWonder)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_Wonder_0$Descriptor(DistrictImprovementWonder)"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_Wonder1" Prefab="Prefabs/Cities/BrokenLords/District_Wonder_01"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$Path(DistrictImprovementAltarOfAuriga)" >
+      <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_AltarOfAuriga" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_Orbs_AltarOfAuriga_01" Condition="$Property(Level) ge 1"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_AltarOfAuriga" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_Orbs_AltarOfAuriga_00"/>
+        <Fallback>
+            <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_AltarOfAuriga" Prefab="Prefabs/Cities/BrokenLords/District_Orbs_AltarOfAuriga_01" Condition="$Property(Level) ge 1"/>
+            <Fallback>
+                <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_AltarOfAuriga" Prefab="Prefabs/Cities/BrokenLords/District_Orbs_AltarOfAuriga_00"/>
+            </Fallback>
+        </Fallback>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$Path(DistrictImprovementOrbUnlock)" >
+      <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_OrbUnlock" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_Orbs_OrbUnlock$Descriptor(DistrictImprovementOrbUnlock)_01" Condition="$Property(Level) ge 1"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_OrbUnlock" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_Orbs_OrbUnlock$Descriptor(DistrictImprovementOrbUnlock)_00"/>
+        <Fallback>
+            <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_OrbUnlock" Prefab="Prefabs/Cities/BrokenLords/District_Orbs_OrbUnlock$Descriptor(DistrictImprovementOrbUnlock)_01" Condition="$Property(Level) ge 1"/>
+            <Fallback>
+                <GameObject Name="WorldDistrict:$Descriptor(DistrictImprovement)_OrbUnlock" Prefab="Prefabs/Cities/BrokenLords/District_Orbs_OrbUnlock$Descriptor(DistrictImprovementOrbUnlock)_00"/>
+            </Fallback>
+        </Fallback>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$Descriptor(DistrictType) eq 'Camp'" >
+      <Node Condition="$Path(TerrainTagPointOfInterest)">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+      <Node Condition="($Path(AnomalyWithHole))">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+    </Node>
+
+    <Node Condition="$Descriptor(DistrictType) eq 'Extension'" >
+      <Variation Weights="25;25;25;25" Values="00;01;02;03"/>
+      <Node Condition="$Path(TerrainTagPointOfInterest)">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+      <Node Condition="($Path(AnomalyWithHole))">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+    </Node>
+
+    <Node Condition="($Descriptor(DistrictType) eq 'Center')" >
+      <Node Condition="$Path(TerrainTagPointOfInterest)">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+      <Node Condition="($Path(AnomalyWithHole))">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+    </Node>
+
+    <Node Condition="$Path(DistrictTypeExploitation)" >
+        <Node Condition="$Path(TerrainTagForest)">
+        <Variation Weights="1" Values="10"/>
+      </Node>
+      <Node Condition="($Path(TerrainTagWater) or $Path(TerrainTypeOcean))">
+        <Variation Weights="1" Values="20"/>
+      </Node>
+    </Node>
+
+    <Node Condition="$Descriptor(DistrictType) eq 'Improvement'">
+      <Node Condition="$Path(TerrainTagWater)">
+        <Variation Weights="1" Values="20"/>
+      </Node>
+      <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_$Descriptor(DistrictImprovement)_$(Variation)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_$Descriptor(DistrictType)_$Descriptor(DistrictImprovement)_$(Variation)"/>
+    </Node>
+
+    <Fallback>
+      <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_01_$(Variation)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_$Descriptor(DistrictType)_Level02_$(Variation)" Condition="$Property(Level) ge 2"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_02_$(Variation)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_$Descriptor(DistrictType)_Level01_$(Variation)" Condition="$Property(Level) ge 1"/>
+        <Fallback>
+          <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_03_$(Variation)" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/District_$Descriptor(DistrictType)_Level00_$(Variation)"/>
+          <Fallback>
+            <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_04_$(Variation)" Prefab="Prefabs/Cities/Districts/$Descriptor(BiomeType)/District_$Descriptor(DistrictType)_Level00_$(Variation)"/>
+            <!-- Try the default affinity mapping. -->
+            <Fallback>
+              <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_05_$(Variation)" Prefab="Prefabs/Cities/BrokenLords/District_$Descriptor(DistrictType)_Level02_$(Variation)" Condition="$Property(Level) ge 2"/>
+              <Fallback>
+                <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_06_$(Variation)" Prefab="Prefabs/Cities/BrokenLords/District_$Descriptor(DistrictType)_Level01_$(Variation)" Condition="$Property(Level) ge 1"/>
+                <Fallback>
+                  <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_07_$(Variation)" Prefab="Prefabs/Cities/BrokenLords/District_$Descriptor(DistrictType)_Level00_$(Variation)"/>
+                  <Fallback>
+                    <GameObject Name="WorldDistrict:$Descriptor(DistrictType)_08_$(Variation)" Prefab="Prefabs/Cities/Districts/Temperate/District_$Descriptor(DistrictType)_Level00_$(Variation)"/>
+                  </Fallback>
+                </Fallback>
+              </Fallback>
+            </Fallback>
+          </Fallback>
+        </Fallback>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldDistrict.Separation">
+    <Node Condition="$(DistrictSeparationType) eq 'Fence'" >
+      <Variation Weights="35;25;25;15" Values=";00;01;02"/>
+      <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      </Fallback>
+    </Node>
+    <Node Condition="$(DistrictSeparationType) eq 'Battlement'" >
+      <Variation Weights="50;30;20" Values="00;01;02"/>
+      <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      </Fallback>
+    </Node>
+    <Node Condition="$(DistrictSeparationType) eq 'BattlementDoor'" >
+      <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/$Descriptor(...:AffinityMapping)/DistrictSeparation_Battlement_Door_00"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_Battlement_Door_00"/>
+      </Fallback>
+    </Node>
+    <Node Condition="$(DistrictSeparationType) eq 'OutsideSiege'" >
+      <Variation Weights="40;20;20;20" Values="00;01;02;03"/>
+      <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/$(BesiegingAffinityMapping)/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_$(DistrictSeparationType)_$(Variation)"/>
+      </Fallback>
+    </Node>
+    <Node Condition="$(DistrictSeparationType) eq 'InsideSiege'" >
+      <Variation Weights="40;20;20;20" Values="00;01;02;03"/>
+      <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/$(BesiegingAffinityMapping)/DistrictSeparation_Siege_Inside_$(Variation)"/>
+      <Fallback>
+        <GameObject Name="WorldDistrict.Separation ($(DistrictSeparationType))" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_Siege_Inside_$(Variation)"/>
+      </Fallback>
+    </Node>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldDistrict.Siege">
+    <Variation Weights="40;20;20;20" Values="00;01;02;03"/>
+    <GameObject Name="WorldDistrict.Siege" Prefab="Prefabs/Cities/$(BesiegingAffinityMapping)/DistrictSeparation_Siege_Inside_$(Variation)"/>
+    <Fallback>
+      <GameObject Name="WorldDistrict.Siege" Prefab="Prefabs/Cities/BrokenLords/DistrictSeparation_Siege_Inside_$(Variation)"/>
+    </Fallback>
+  </XmlMapping>
+
+  <!-- When dealing with world markers, the simulation object that is used in the interpreter context is the one of the bound target. -->
+  <XmlMapping Name="WorldMarker">
+    <GameObject Name="WorldMarker:$(WorldMarkerType)" Prefab="Prefabs/Environments/Miscellaneous/WorldMarker_$(WorldMarkerType)_00"/>
+  </XmlMapping>
+
+  <XmlMapping Name="Banner">
+    <GameObject Name="Banner" Prefab="Prefabs/Banners/$(Variation)Banner_$(BesiegingAffinityMapping)_Low"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_$(BesiegingAffinityMapping)_Low"/>
+      <Fallback>
+        <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_Privateers_Low"/>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+  
+  <XmlMapping Name="MapBoost">
+    <GameObject Name="WorldMapBoost" Prefab="Prefabs/MapBoost/WorldMapBoost"/>
+  </XmlMapping>
+    
+  <XmlMapping Name="WorldMapBoost">
+    <GameObject Name="Banner" Prefab="Prefabs/MapBoost/$(MapBoostDefinitionName)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="MapBoostPickup">
+    <GameObject Name="MapBoostPickup" Prefab="Prefabs/MapBoost/MapBoostPickup"/>
+  </XmlMapping>
+
+  <XmlMapping Name="Pillar">
+    <GameObject Name="WorldPillar" Prefab="Prefabs/Cities/WorldPillar"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldBooster">
+    <GameObject Name="WorldBooster" Prefab="Prefabs/Boosters/$Descriptor(WorldBooster)"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldPillar">
+    <GameObject Name="Banner" Prefab="Prefabs/Pillars/$(PillarDefinitionName)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+    
+  <XmlMapping Name="TerraformDevice">
+    <GameObject Name="WorldTerraformDevice" Prefab="Prefabs/Cities/WorldTerraformDevice"/>
+  </XmlMapping>
+    
+  <XmlMapping Name="WorldTerraformDevice">
+    <GameObject Name="Banner" Prefab="Prefabs/TerraformDevices/$(TerraformDeviceDefinitionName)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="CastedSpellGhost">
+    <GameObject Name="CastedSpellGhost" Prefab="Prefabs/Effects/Spells/$(SpellDefinitionName)_Ghost"/>
+    <Fallback>
+      <GameObject Name="CastedSpellGhost" Prefab="Prefabs/Pillars/Pillar6_Ghost"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldPawn">
+
+    <Node Condition="$Path(UnitProfileMezariHero2)">
+      <GameObject Name="$Descriptor(UnitType)" Prefab="Prefabs/Armies/UnitBodyMezariHeroB"/>
+      <Fallback>
+        <GameObject Name="DefaultPawn" Prefab="#Default World Mapping/#DefaultPawnPrefab"/>
+      </Fallback>
+    </Node>
+
+    <Node Condition="$Path(UnitProfileMezariHero3)">
+      <GameObject Name="$Descriptor(UnitType)" Prefab="Prefabs/Armies/UnitBodyMezariHeroC"/>
+      <Fallback>
+        <GameObject Name="DefaultPawn" Prefab="#Default World Mapping/#DefaultPawnPrefab"/>
+      </Fallback>
+    </Node>
+
+    <Fallback>
+      <GameObject Name="$Descriptor(UnitType)" Prefab="Prefabs/Armies/$(BodyDefinitionName)$Descriptor(:Variation)"/>
+      <Fallback>
+        <GameObject Name="$Descriptor(UnitType)" Prefab="Prefabs/Armies/$(BodyDefinitionName)"/>
+        <Fallback>
+          <GameObject Name="DefaultPawn" Prefab="#Default World Mapping/#DefaultPawnPrefab"/>
+        </Fallback>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldPawn.Sails">
+    <GameObject Name="SailingShip" Prefab="Prefabs/Armies/SailingShips/SailingShipPrivateers" Condition="$Path(../ClassArmy,Privateers)"/>
+    <Fallback>
+      <GameObject Name="SailingShip" Prefab="Prefabs/Armies/SailingShips/FlagShip$Descriptor(...:AffinityMapping)" Condition="$Path(UnitHero)"/>
+      <Fallback>
+        <GameObject Name="SailingShip" Prefab="Prefabs/Armies/SailingShips/SailingShip$Descriptor(...:AffinityMapping)"/>
+        <Fallback>
+          <GameObject Name="Default SailingShip" Prefab="Prefabs/Armies/SailingShips/Default"/>
+        </Fallback>
+      </Fallback>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldUnit">
+    <GameObject Name="WorldUnit" Prefab="Prefabs/Armies/WorldUnit"/>
+  </XmlMapping>
+
+  <XmlMapping Name="ClassKaijuGarrison">
+    <GameObject Name="WorldKaiju" Prefab="Prefabs/Environments/Kaiju/WorldKaiju"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldKaijuGarrison">
+    <GameObject Name="Kaiju" Prefab="Prefabs/Armies/$(KaijuMonsterName)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldKaijuSwitchState.ToArmyMode.FX">
+    <GameObject Name="FX_KaijuToArmyMode" Prefab="Prefabs/Environments/Kaiju/FXs/WorldKaijuSwitchStateFx_ToArmyMode"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldKaijuSwitchState.ToGarrisonMode.FX">
+    <GameObject Name="FX_KaijuToGarrisonMode" Prefab="Prefabs/Environments/Kaiju/FXs/WorldKaijuSwitchStateFx_ToGarrisonMode"/>
+  </XmlMapping>
+
+  <XmlMapping Name="ClassCreepingNode">
+    <GameObject Name="WorldCreepingNode" Prefab="Prefabs/Environments/CreepingNode/WorldCreepingNode"/>
+  </XmlMapping>
+
+  <XmlMapping Name="WorldCreepingNode">
+    <GameObject Name="Kaiju" Prefab="Prefabs/Armies/UnitBodyKaiju1"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="CreepingNodeConstruction">
+    <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/Mimics/Construction_Node$(MappingType)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+
+  <XmlMapping Name="CreepingNode">
+    <GameObject Name="($(ConstructibleElementName))" Prefab="Prefabs/Cities/Mimics/Node$(MappingType)"/>
+    <Fallback>
+      <GameObject Name="Banner" Prefab="Prefabs/Banners/Banner_BrokenLords_Low"/>
+    </Fallback>
+  </XmlMapping>
+  
+  <XmlMapping Name="FastTravelCursor.EntryNode">
+    <GameObject Name="FastTravelCursor_EntryNode" Prefab="Prefabs/Armies/FastTravelCursor_EntryNode"/>
+  </XmlMapping>
+
+  <XmlMapping Name="FastTravelCursor.ExitNode">
+    <GameObject Name="FastTravelCursor_ExitNode" Prefab="Prefabs/Armies/FastTravelCursor_ExitNode"/>
+  </XmlMapping>
+
+  <XmlMapping Name="FastTravelCursor.HighlightedNode">
+    <GameObject Name="FastTravelCursor_HighlightedNode" Prefab="Prefabs/Armies/FastTravelCursor_HighlightedNode"/>
+  </XmlMapping>
+
+</Datatable>
